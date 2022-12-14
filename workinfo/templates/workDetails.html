@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+{% block css %}
+.innerDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}{% endblock %}
+{% block body %}
+<div class="innerDiv">
+    <h1>
+        Your Work Information here
+    </h1>
+    <form action="" method="POST" class="form1">{% csrf_token %}
+        <label for="cname">Current Company name:</label><br>
+        <input type="text" id="cname" name="cname" placeholder="Enter First Name"><br><br>
+        <input type="submit" value="Submit"><br>
+        <br>
+        <br>
+        <a href ="finish"><button type="button" class="button">Finish</button></a>
+    </form>
+    </div>
+{% endblock %}

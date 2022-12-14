@@ -1,0 +1,41 @@
+{% extends 'basic.html' %}
+    <title>Personal Details Web Page</title>
+    {% block css %}
+    .innerDiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    {% endblock %}
+{% block body %}
+<div class ="innerDiv">
+    <h1>
+        Your Personal Information here
+    </h1>
+    <br>
+    <form action="" method="POST" class="form1">{% csrf_token %}
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" placeholder="Enter First Name"><br><br>
+        <error-output class="text-error" for="fname"></error-output>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="Enter Last Name"><br><br>
+        <label for="age">Age:</label><br>
+        <input type="text" id="age" name="age"><br><br>
+        <a href = "qualify" ><input type="submit" value="Submit"></a>
+    </form>
+</div>
+{% endblock %}
+<script>
+    const fname = document.querySelector('#fname');
+    const textError = document.querySelector('.text-error');
+    text.addEventListener('input',function(){
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+        if(nameRegex.test(fname.value))
+            textError.textContent = "";
+        else
+            textError.textContent = "Name is Incorrect";
+    });
+</script>

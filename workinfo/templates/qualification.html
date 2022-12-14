@@ -1,0 +1,22 @@
+{% extends 'basic.html' %}
+{% block css %}
+.innerDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}{% endblock %}
+{% block body %}
+<div class="innerDiv">
+    <h1>
+        Your Qualification Information here
+    </h1>
+    <form action ="" method="POST" class="form1">{% csrf_token %}
+        <label for="uname">University Name:</label><br>
+        <input type="text" id="uname" name="uname" placeholder="Enter University Name"><br><br>
+        <a href="empwork"><input type="submit" value="Submit"></a><br><br>
+    </form>
+    </div>
+{% endblock %}
